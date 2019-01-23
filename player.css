@@ -71,7 +71,7 @@
 }
 
 .player-btn-pause {
-  background: url(icons/media-pause.svg') center no-repeat;
+  background: url('icons/media-pause.svg') center no-repeat;
   background-size: 75% 75%;
   background-color: white;
 }
