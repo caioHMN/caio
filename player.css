@@ -34,7 +34,7 @@
 }
 
 .player-timeline-mark {
-  width: 95%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -51,7 +51,7 @@
   font-size: 0.8em;
   color: white;
   float: right;
-  transform: translateY(-8px);
+  transform: translateY(-5px);
 }
 
 .player-btn-toggle-play {
