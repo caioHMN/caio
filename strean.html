@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+
+<link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css">
+<!-- Flowplayer library -->
+<script src="https://releases.flowplayer.org/7.2.4/flowplayer.min.js"></script>
+<!-- Flowplayer hlsjs engine (light) -->
+<script src="https://releases.flowplayer.org/hlsjs/flowplayer.hlsjs.light.min.js"></script>
+
+  
+
+
+
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 1px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+
+<body style="background-color:black;"><div class="container">     
+      <div class="row">
+        <form class="form-inline" onsubmit="load(); return false;">        
+        <input class="form-control" type="text" id="streamUrl" size="120" placeholder="">
+        <button type="submit" class="btn btn-primary float-right">Load</button>            
+        </form>	
+	<audio id="pla" src="https://static-assets.highwebmedia.com/tsdefaultassets/sounds/classic/tiny.mp3"></audio>
+	<audio id="small" src="https://static-assets.highwebmedia.com/tsdefaultassets/sounds/classic/small.mp3"></audio>
+	<audio id="medium" src="https://static-assets.highwebmedia.com/tsdefaultassets/sounds/classic/medium.mp3"></audio>
+	<audio id="large" src="https://static-assets.highwebmedia.com/tsdefaultassets/sounds/classic/large.mp3"></audio>
+	<audio id="huge" src="https://static-assets.highwebmedia.com/tsdefaultassets/sounds/classic/huge.mp3"></audio>
+	<button class="button button1" onclick="pla()">Tip</button>
+	<button class="button button1" onclick="small()">TipSmall</button>
+	<button class="button button1" onclick="medium()">TipMedium</button>
+	<button class="button button1" onclick="large()">TipLarge</button>
+	<button class="button button1" onclick="huge()">TipHuge</button>
+	<div id="player-wrapper"></div>
+	</div>      
+      </div>	
+	<div id="player" class="flowplayer fp-slim no-buffer" data-aspect-ratio="12:5"></div>    
+    <script>
+    function load() {
+    var streamUrl = document.getElementById('streamUrl').value;
+    flowplayer("#player",{clip:{sources:[{ type: "application/x-mpegurl", src: (streamUrl)  }]}});}
+
+    function pla(){document.getElementById('pla').play();document.getElementById('pla').volume=0.01;}
+    function small(){document.getElementById('small').play();document.getElementById('small').volume=0.01;}
+    function medium(){document.getElementById('medium').play();document.getElementById('medium').volume=0.01;}
+    function large(){document.getElementById('large').play();document.getElementById('large').volume=0.01;}
+    function huge(){document.getElementById('huge').play();document.getElementById('huge').volume=0.01;}
+</script>
+</html>
+	
